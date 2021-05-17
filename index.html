@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-05-17 17:58:54 / 修改时间：18:32:13" itemprop="dateCreated datePublished" datetime="2021-05-17T17:58:54-04:00">2021-05-17</time>
+              <time title="创建时间：2021-05-17 17:58:54 / 修改时间：18:36:54" itemprop="dateCreated datePublished" datetime="2021-05-17T17:58:54-04:00">2021-05-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,18 +198,14 @@
           <h2 id="英文原题"><a href="#英文原题" class="headerlink" title="英文原题"></a>英文原题</h2><p>Given a binary tree, we install cameras on the nodes of the tree. </p>
 <p>Each camera at a node can monitor its parent, itself, and its immediate children.</p>
 <p>Calculate the minimum number of cameras needed to monitor all nodes of the tree.</p>
-<p><img src="" alt="Example"></p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>&ensp;&ensp;&ensp;&ensp;题目大致意思是给树装监控，一个监控可以覆盖自己以及它的父节点和子节点，求最少需要多少个监控。<br>&ensp;&ensp;&ensp;&ensp;首先分析每个节点会被如何覆盖：</p>
-<ul>
-<li>第一种，根节点，左右子节点里有监控。</li>
-<li>第二种，中间节点，父节点或左右子节点有监控。</li>
-<li>第三种，子节点，父节点有监控。</li>
-<li>最后是本身就是监控。<br>&ensp;&ensp;&ensp;&ensp;肯定是要用DFS遍历来模拟安装监控的，但是这题我们得从下往上安装。设定三个状态0:未被覆盖；1:被覆盖；2:本身是监控。那么对于每个节点来说，如果是叶子节点，那就不用安装；对于其他节点来说，则根据其子节点的覆盖情况来安装。这么做就不需要把父节点考虑进来，方便很多。</li>
-</ul>
-<h2 id="python-代码"><a href="#python-代码" class="headerlink" title="python 代码"></a>python 代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minCameraCover(self, root: TreeNode) -&gt; int:</span><br><span class="line">        res &#x3D; [0]</span><br><span class="line">        </span><br><span class="line">        ## 0: not covered; 1: covered; 2: camera</span><br><span class="line">        def dfs(root):</span><br><span class="line">            if not root:</span><br><span class="line">                return 1</span><br><span class="line">            left &#x3D; dfs(root.left)</span><br><span class="line">            right &#x3D; dfs(root.right)</span><br><span class="line">            </span><br><span class="line">            if left &#x3D;&#x3D; 0 or right &#x3D;&#x3D; 0:</span><br><span class="line">                res[0] +&#x3D; 1</span><br><span class="line">                return 2</span><br><span class="line">            if left &#x3D;&#x3D; 2 or right &#x3D;&#x3D; 2:</span><br><span class="line">                return 1</span><br><span class="line">            return 0</span><br><span class="line">        </span><br><span class="line">        if dfs(root) &#x3D;&#x3D; 0:</span><br><span class="line">            res[0] +&#x3D; 1</span><br><span class="line">        return res[0]</span><br></pre></td></tr></table></figure>
-
-<p><em>前两天打了疫苗有点发烧就没更新，今天继续。</em></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/17/leetcode968/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
