@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"zihan-super-blog.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我">
+  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Xcode搭建app（二）">
 <meta property="og:url" content="http://zihan-super-blog.com/2021/05/19/xcode-build-app/index.html">
 <meta property="og:site_name" content="子寒的博客">
-<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我">
+<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_2.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_6.png">
 <meta property="article:published_time" content="2021-05-19T18:02:51.000Z">
-<meta property="article:modified_time" content="2021-05-19T22:33:56.130Z">
+<meta property="article:modified_time" content="2021-05-20T21:58:51.740Z">
 <meta property="article:author" content="子寒">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png">
@@ -179,10 +179,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-05-19 14:02:51 / 修改时间：18:33:56" itemprop="dateCreated datePublished" datetime="2021-05-19T14:02:51-04:00">2021-05-19</time>
+              <time title="创建时间：2021-05-19 14:02:51" itemprop="dateCreated datePublished" datetime="2021-05-19T14:02:51-04:00">2021-05-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-20 17:58:51" itemprop="dateModified" datetime="2021-05-20T17:58:51-04:00">2021-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -204,7 +210,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&ensp;&ensp;&ensp;&ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。<br>&ensp;&ensp;&ensp;&ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我们到库里，找到tab bar controller，把它拖出来，并且删掉后面连带的那两个view controller。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png" alt="tab bar1"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_2.png" alt="tab bar2"><br>选中 Tab Bar Controller 进到属性检查(attributes inspector) 把 is initial view controller 这个勾上。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_3.png" alt="tab bar3"><br>&ensp;&ensp;&ensp;&ensp;接下来为了把我们的 view controller 放到这个 tab bar controller 里面，要把 view controller embed 到 navigation controller 里面，如图。(其实这么做也是为了美观让app显得更一体化，要是直接把view controller连上去也可以)<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_4.png" alt="tab bar4"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_5.png" alt="tab bar5"><br>&ensp;&ensp;&ensp;&ensp;最后选中Tab Bar Controller 按住 control，蓝线一直拖到 Navigation Controller 那，选择 view controllers。这样就把 view controller 和 tab view controller 连接到一起了。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_6.png" alt="tab bar6"></p>
+        <span id="more"></span>
+<p>&ensp;&ensp;&ensp;&ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。<br>&ensp;&ensp;&ensp;&ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我们到库里，找到tab bar controller，把它拖出来，并且删掉后面连带的那两个view controller。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png" alt="tab bar1"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_2.png" alt="tab bar2"><br>选中 Tab Bar Controller 进到属性检查(attributes inspector) 把 is initial view controller 这个勾上。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_3.png" alt="tab bar3"><br>&ensp;&ensp;&ensp;&ensp;接下来为了把我们的 view controller 放到这个 tab bar controller 里面，要把 view controller embed 到 navigation controller 里面，如图。(其实这么做也是为了美观让app显得更一体化，要是直接把view controller连上去也可以)<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_4.png" alt="tab bar4"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_5.png" alt="tab bar5"><br>&ensp;&ensp;&ensp;&ensp;最后选中Tab Bar Controller 按住 control，蓝线一直拖到 Navigation Controller 那，选择 view controllers。这样就把 view controller 和 tab view controller 连接到一起了。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_6.png" alt="tab bar6"></p>
 
     </div>
 
