@@ -20,24 +20,19 @@
     var CONFIG = {"hostname":"zihan-super-blog.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。当前版本12.5">
+  <meta name="description" content="英文原题Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用Xcode搭建app（一）">
-<meta property="og:url" content="http://zihan-super-blog.com/2021/05/02/app-build/index.html">
+<meta property="og:title" content="leetcode90 subsetsII 解题报告">
+<meta property="og:url" content="http://zihan-super-blog.com/2021/08/03/leetcode90/index.html">
 <meta property="og:site_name" content="子寒的博客">
-<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。当前版本12.5">
+<meta property="og:description" content="英文原题Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project3.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/UI1.png">
-<meta property="article:published_time" content="2021-05-02T15:14:39.000Z">
-<meta property="article:modified_time" content="2021-06-02T01:24:30.679Z">
+<meta property="article:published_time" content="2021-08-03T21:01:59.000Z">
+<meta property="article:modified_time" content="2021-08-03T21:12:19.667Z">
 <meta property="article:author" content="子寒">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project.png">
 
-<link rel="canonical" href="http://zihan-super-blog.com/2021/05/02/app-build/">
+<link rel="canonical" href="http://zihan-super-blog.com/2021/08/03/leetcode90/">
 
 
 <script id="page-configurations">
@@ -50,7 +45,7 @@
   };
 </script>
 
-  <title>用Xcode搭建app（一） | 子寒的博客</title>
+  <title>leetcode90 subsetsII 解题报告 | 子寒的博客</title>
   
 
 
@@ -155,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zihan-super-blog.com/2021/05/02/app-build/">
+    <link itemprop="mainEntityOfPage" href="http://zihan-super-blog.com/2021/08/03/leetcode90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ava.jpg">
@@ -168,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          用Xcode搭建app（一）
+          leetcode90 subsetsII 解题报告
         </h1>
 
         <div class="post-meta">
@@ -177,23 +172,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-02 11:14:39" itemprop="dateCreated datePublished" datetime="2021-05-02T11:14:39-04:00">2021-05-02</time>
+              <time title="创建时间：2021-08-03 17:01:59 / 修改时间：17:12:19" itemprop="dateCreated datePublished" datetime="2021-08-03T17:01:59-04:00">2021-08-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 21:24:30" itemprop="dateModified" datetime="2021-06-01T21:24:30-04:00">2021-06-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/XCode/" itemprop="url" rel="index"><span itemprop="name">-XCode</span></a>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">-leetcode</span></a>
                 </span>
             </span>
 
@@ -208,12 +197,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&ensp;&ensp;&ensp;&ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。<br><strong>当前版本12.5</strong></p>
+        <h2 id="英文原题"><a href="#英文原题" class="headerlink" title="英文原题"></a>英文原题</h2><p>Given an integer array nums that may contain duplicates, return all possible subsets (the power set).</p>
+<p>The solution set must not contain duplicate subsets. Return the solution in any order.</p>
 <span id="more"></span>
 
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>&ensp;&ensp;&ensp;&ensp;打开XCode，选择Create a new Xcode project。然后直接选择app，后面弹出的窗口会要你输入项目名称和项目保存的地址，完事就可以完成项目创建。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project.png" alt="create project1"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project2.png" alt="create project2"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project3.png" alt="create project3"></p>
-<h2 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h2><p>&ensp;&ensp;&ensp;&ensp;建好项目可以看到Xcode的UI大致为左中右三块，左边这块是你的各种项目文件，中间是代码区，右边是检查器(inspectors)。左上角和右上角的按钮可以控制是否显示左边的区块和右边的区块。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/UI1.png" alt="ui"><br>左边的文件可以看到有“ViewController.swift”这个就是你的app的第一个页面的代码。“Main.storyboard”是app的界面，UI的设置大部分都可以在这个里面完成。“Assets.xcassets”</p>
+<p><em>Example</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2,2]</span><br><span class="line">Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]</span><br></pre></td></tr></table></figure>
 
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>&ensp;&ensp;&ensp;&ensp;类似求全排列，用递归的思路，题目要求同样数字不同排序也只能算一个，比如[1,2]和[2,1]就是一个。所以为了去重我们要先给数组排序，在递归中遇到相同的数字只算一个。</p>
+<h2 id="python-代码"><a href="#python-代码" class="headerlink" title="python 代码"></a>python 代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def subsetsWithDup(self, nums: List[int]) -&gt; List[List[int]]:</span><br><span class="line">        res &#x3D; []</span><br><span class="line">        nums.sort()</span><br><span class="line">        </span><br><span class="line">        def dfs(path, index):</span><br><span class="line">            if path not in res:</span><br><span class="line">                res.append(path)</span><br><span class="line">            for i in range(index, len(nums)):</span><br><span class="line">                if i &gt; index and nums[i] &#x3D;&#x3D; nums[i-1]:</span><br><span class="line">                    continue</span><br><span class="line">                dfs(path+[nums[i]], i+1)</span><br><span class="line">        </span><br><span class="line">        dfs([], 0)</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+
+<p>也有更简单的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def subsetsWithDup(self, nums: List[int]) -&gt; List[List[int]]:</span><br><span class="line">        res &#x3D; [[]]</span><br><span class="line">        nums.sort()</span><br><span class="line">        </span><br><span class="line">        for num in nums:</span><br><span class="line">            for i in range(len(res)):</span><br><span class="line">                if res[i] + [num] not in res:</span><br><span class="line">                    res.append(res[i]+[num])</span><br><span class="line">        </span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -228,7 +223,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://zihan-super-blog.com/2021/05/02/app-build/" title="用Xcode搭建app（一）">http://zihan-super-blog.com/2021/05/02/app-build/</a>
+    <a href="http://zihan-super-blog.com/2021/08/03/leetcode90/" title="leetcode90 subsetsII 解题报告">http://zihan-super-blog.com/2021/08/03/leetcode90/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -245,13 +240,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/30/build_blogs/" rel="prev" title="搭博客小记">
-      <i class="fa fa-chevron-left"></i> 搭博客小记
+    <a href="/2021/07/20/leetcode384/" rel="prev" title="leetcode384 Shuffle an Array 解题报告">
+      <i class="fa fa-chevron-left"></i> leetcode384 Shuffle an Array 解题报告
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/05/leetcode79/" rel="next" title="leetcode79 Word Search 解题报告">
-      leetcode79 Word Search 解题报告 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -310,7 +302,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">界面介绍</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8B%B1%E6%96%87%E5%8E%9F%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">英文原题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">python 代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
