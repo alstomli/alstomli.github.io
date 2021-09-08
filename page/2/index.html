@@ -527,7 +527,17 @@
 
       
           <span id="more"></span>
-<p>&ensp;&ensp;&ensp;&ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。<br>&ensp;&ensp;&ensp;&ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我们到库里，找到tab bar controller，把它拖出来，并且删掉后面连带的那两个view controller。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png" alt="tab bar1"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_2.png" alt="tab bar2"><br>选中 Tab Bar Controller 进到属性检查(attributes inspector) 把 is initial view controller 这个勾上。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_3.png" alt="tab bar3"><br>&ensp;&ensp;&ensp;&ensp;接下来为了把我们的 view controller 放到这个 tab bar controller 里面，要把 view controller embed 到 navigation controller 里面，如图。(其实这么做也是为了美观让app显得更一体化，要是直接把view controller连上去也可以)<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_4.png" alt="tab bar4"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_5.png" alt="tab bar5"><br>&ensp;&ensp;&ensp;&ensp;最后选中Tab Bar Controller 按住 control，蓝线一直拖到 Navigation Controller 那，选择 view controllers。这样就把 view controller 和 tab view controller 连接到一起了。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_6.png" alt="tab bar6"></p>
+<p>&ensp;&ensp;&ensp;&ensp;这一期总结一下tab bar 的使用。tab bar是做app经常会用到的一种结构，做出来的效果就类似微信下面的那个有聊天、联系人、发现、我，几块的这种，可以让用户一目了然，知道这个app有哪些主要功能。
+&ensp;&ensp;&ensp;&ensp;先进到main.storyboard里面，可以发现默认的是一个单独的viewcontroller。我们到库里，找到tab bar controller，把它拖出来，并且删掉后面连带的那两个view controller。
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/xcode_tab_bar1.png" alt="tab bar1"> 
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_2.png" alt="tab bar2">
+选中 Tab Bar Controller 进到属性检查(attributes inspector) 把 is initial view controller 这个勾上。
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_3.png" alt="tab bar3">
+&ensp;&ensp;&ensp;&ensp;接下来为了把我们的 view controller 放到这个 tab bar controller 里面，要把 view controller embed 到 navigation controller 里面，如图。(其实这么做也是为了美观让app显得更一体化，要是直接把view controller连上去也可以)
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_4.png" alt="tab bar4">
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_5.png" alt="tab bar5">
+&ensp;&ensp;&ensp;&ensp;最后选中Tab Bar Controller 按住 control，蓝线一直拖到 Navigation Controller 那，选择 view controllers。这样就把 view controller 和 tab view controller 连接到一起了。
+<img src="https://raw.githubusercontent.com/alstomli/images/main/XcodeNotes/tab_6.png" alt="tab bar6"></p>
 
       
     </div>

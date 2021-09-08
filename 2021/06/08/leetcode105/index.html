@@ -201,7 +201,8 @@
       
         <h2 id="英文原题"><a href="#英文原题" class="headerlink" title="英文原题"></a>英文原题</h2><p>Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.</p>
 <span id="more"></span>
-<p><em>Example</em><br><img src="https://raw.githubusercontent.com/alstomli/images/main/105.PNG" alt="105"></p>
+<p><em>Example</em>
+<img src="https://raw.githubusercontent.com/alstomli/images/main/105.PNG" alt="105"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: preorder &#x3D; [3,9,20,15,7], inorder &#x3D; [9,3,15,20,7]</span><br><span class="line">Output: [3,9,20,null,null,15,7]</span><br></pre></td></tr></table></figure>
 
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>&ensp;&ensp;&ensp;&ensp;题目给出了一个二叉树的先序遍历和中序遍历需要我们还原这个二叉树。首先通过先序遍历我们可以知道根节点就是先序遍历的第一个数，又因为题目中说给到的数都是唯一的，所以我们可以把这个根节点的值放到中序遍历的序列里面，这个值的左边就是左子树的中序，右边就是右子树的中序，然后记录左子树的节点个数，再去先序遍历里面根节点后面提取相应的个数就是左子树的先序，剩下的就是右子树的先序。</p>

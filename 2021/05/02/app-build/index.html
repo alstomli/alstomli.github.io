@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"zihan-super-blog.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。当前版本12.5">
+  <meta name="description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。 当前版本12.5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Xcode搭建app（一）">
 <meta property="og:url" content="http://zihan-super-blog.com/2021/05/02/app-build/index.html">
 <meta property="og:site_name" content="子寒的博客">
-<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。当前版本12.5">
+<meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。 当前版本12.5">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/alstomli/images/main/create_project2.png">
@@ -208,11 +208,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>&ensp;&ensp;&ensp;&ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。<br><strong>当前版本12.5</strong></p>
+        <p>&ensp;&ensp;&ensp;&ensp;这个系列主要介绍我工作后的第一个项目：一个ios上的心率检测app，这个app的第一个版本”remote vital signs”已经在app store上公布，有兴趣的同学可以下下来玩玩。我打算把系列分成几块分别讲述Xcode做app的一些技术上的心得，这期就主要说一下Xcode的一些基本操作。
+<strong>当前版本12.5</strong></p>
 <span id="more"></span>
 
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>&ensp;&ensp;&ensp;&ensp;打开XCode，选择Create a new Xcode project。然后直接选择app，后面弹出的窗口会要你输入项目名称和项目保存的地址，完事就可以完成项目创建。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project.png" alt="create project1"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project2.png" alt="create project2"><br><img src="https://raw.githubusercontent.com/alstomli/images/main/create_project3.png" alt="create project3"></p>
-<h2 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h2><p>&ensp;&ensp;&ensp;&ensp;建好项目可以看到Xcode的UI大致为左中右三块，左边这块是你的各种项目文件，中间是代码区，右边是检查器(inspectors)。左上角和右上角的按钮可以控制是否显示左边的区块和右边的区块。<br><img src="https://raw.githubusercontent.com/alstomli/images/main/UI1.png" alt="ui"><br>左边的文件可以看到有“ViewController.swift”这个就是你的app的第一个页面的代码。“Main.storyboard”是app的界面，UI的设置大部分都可以在这个里面完成。“Assets.xcassets”</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>&ensp;&ensp;&ensp;&ensp;打开XCode，选择Create a new Xcode project。然后直接选择app，后面弹出的窗口会要你输入项目名称和项目保存的地址，完事就可以完成项目创建。
+<img src="https://raw.githubusercontent.com/alstomli/images/main/create_project.png" alt="create project1">
+<img src="https://raw.githubusercontent.com/alstomli/images/main/create_project2.png" alt="create project2">
+<img src="https://raw.githubusercontent.com/alstomli/images/main/create_project3.png" alt="create project3"></p>
+<h2 id="界面介绍"><a href="#界面介绍" class="headerlink" title="界面介绍"></a>界面介绍</h2><p>&ensp;&ensp;&ensp;&ensp;建好项目可以看到Xcode的UI大致为左中右三块，左边这块是你的各种项目文件，中间是代码区，右边是检查器(inspectors)。左上角和右上角的按钮可以控制是否显示左边的区块和右边的区块。
+<img src="https://raw.githubusercontent.com/alstomli/images/main/UI1.png" alt="ui">
+左边的文件可以看到有“ViewController.swift”这个就是你的app的第一个页面的代码。“Main.storyboard”是app的界面，UI的设置大部分都可以在这个里面完成。“Assets.xcassets”</p>
 
     </div>
 
